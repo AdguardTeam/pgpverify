@@ -6,6 +6,9 @@ Simple web page that verifies PGP signatures online.
 
 PGP Verify is a client-side web application that allows you to verify detached PGP signatures directly in your browser. All verification is performed locally using [OpenPGP.js](https://openpgpjs.org/), ensuring your data never leaves your device.
 
+Originally created as a help tool to verify AdGuard mirror websites.
+Public key is available at [./mirror-attestation-pubkey.asc](./mirror-attestation-pubkey.asc).
+
 ## Features
 
 - ✅ Verify detached PGP signatures
@@ -26,6 +29,7 @@ PGP Verify is a client-side web application that allows you to verify detached P
 ## Development
 
 The project consists of:
+
 - `index.html` - Main HTML page with UI elements
 - `style.css` - Styling for the application
 - `app.js` - JavaScript logic for signature verification
