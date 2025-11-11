@@ -1,4 +1,4 @@
-import * as openpgp from 'https://cdn.jsdelivr.net/npm/openpgp@5.11.3/dist/openpgp.min.mjs';
+import * as openpgp from 'https://cdn.jsdelivr.net/npm/openpgp@6.2.2/dist/openpgp.min.mjs';
 
 const form = document.getElementById('verifyForm');
 const resultDiv = document.getElementById('result');
@@ -52,13 +52,14 @@ async function verifySignature(fileContent, signatureArmored, publicKeyArmored) 
         
         // Check if signature is valid
         const { verified, keyID } = verificationResult.signatures[0];
+        const sign = await verificationResult.signatures[0].signature;
         await verified; // Will throw if signature is invalid
         
         return {
             valid: true,
             keyID: keyID.toHex(),
             signerUserID: publicKey.users[0]?.userID?.userID || 'Unknown',
-            timestamp: verificationResult.signatures[0].signature.packets[0].created
+            timestamp: sign.packets[0].created
         };
     } catch (error) {
         throw new Error(`Verification failed: ${error.message}`);

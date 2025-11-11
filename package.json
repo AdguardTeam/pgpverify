@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/AdguardTeam/pgpverify#readme",
   "dependencies": {
-    "openpgp": "^5.11.3"
+    "openpgp": "^6.2.2"
   }
 }
