@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PGP Verify</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PGP Verify</h1>
+        </header>
+        
+        <section class="description">
+            <p>
+                This web application allows you to verify detached PGP signatures directly in your browser.
+                All verification is performed locally using 
+                <a href="https://openpgpjs.org/" target="_blank" rel="noopener noreferrer">OpenPGP.js</a>,
+                ensuring your data never leaves your device.
+            </p>
+            <p>
+                Source code is available on 
+                <a href="https://github.com/AdguardTeam/pgpverify" target="_blank" rel="noopener noreferrer">GitHub</a>.
+            </p>
+        </section>
+
+        <form id="verifyForm">
+            <div class="form-group">
+                <label for="fileContent">Original File Contents:</label>
+                <textarea 
+                    id="fileContent" 
+                    name="fileContent" 
+                    rows="8" 
+                    placeholder="Paste the original file contents here..."
+                    required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="signature">PGP Signature:</label>
+                <textarea 
+                    id="signature" 
+                    name="signature" 
+                    rows="8" 
+                    placeholder="Paste the detached PGP signature here (-----BEGIN PGP SIGNATURE-----...)"
+                    required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="publicKey">PGP Public Key:</label>
+                <textarea 
+                    id="publicKey" 
+                    name="publicKey" 
+                    rows="8" 
+                    placeholder="Paste the PGP public key here (-----BEGIN PGP PUBLIC KEY BLOCK-----...)"
+                    required>
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mDMEaRMxvxYJKwYBBAHaRw8BAQdAuEoT1ttpdUOyKjLqJljyraCdFX5Yu4IWkDPB
+NLPxlI+0aEFkR3VhcmQgU2VjdXJpdHkgVGVhbSAoR1BHIGtleSBmb3IgQWRHdWFy
+ZCB3ZWJzaXRlIG1pcnJvcnMgYXR0ZXN0YXRpb24pIDxtaXJyb3ItYXR0ZXN0YXRp
+b25AYWRndWFyZC5jb20+iJMEExYKADsWIQTmY7d+5Q6iuTmszkXJvOQIpFkj1AUC
+aRMxvwIbAwULCQgHAgIiAgYVCgkICwIEFgIDAQIeBwIXgAAKCRDJvOQIpFkj1LgY
+AQCCkqy8l8yu1DQOW3Zg2R6nMd02ZrI16u+tZqgLYuNDFAEA4Dfm2B8BzEi8f1P/
+nllTKPMG8ey4HX4aT19i6YxnkQi4OARpEzG/EgorBgEEAZdVAQUBAQdAxk8MWZ5u
+InnYmr/7CmdO5bC1bDcAabachZ3zcO3g1A4DAQgHiHgEGBYKACAWIQTmY7d+5Q6i
+uTmszkXJvOQIpFkj1AUCaRMxvwIbDAAKCRDJvOQIpFkj1Oz5AP9iAFEO2DJstxAS
+5EBroFmhIaFmKJitRySPDOCVsoMqJAD/b4Wuet/r11Kxx/50U6zrByDGDUgfLBYX
+FJt2BGd15A8=
+=2C28
+-----END PGP PUBLIC KEY BLOCK-----
+                </textarea>
+            </div>
+
+            <button type="submit" class="verify-button">Check Signature</button>
+        </form>
+
+        <div id="result" class="result hidden"></div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
