@@ -1,0 +1,28 @@
+{
+  "name": "pgpverify",
+  "version": "1.0.0",
+  "description": "Simple web page that verifies PGP signature online",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdguardTeam/pgpverify.git"
+  },
+  "keywords": [
+    "pgp",
+    "openpgp",
+    "signature",
+    "verification"
+  ],
+  "author": "AdGuard Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AdguardTeam/pgpverify/issues"
+  },
+  "homepage": "https://github.com/AdguardTeam/pgpverify#readme",
+  "dependencies": {
+    "openpgp": "^5.11.3"
+  }
+}
